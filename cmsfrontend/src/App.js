@@ -1,22 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './components/NavBar';
-import LoginPage from './pages/LoginPage';
-import { Route,Routes } from 'react-router';
+import "./App.css";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
+import { Route, Routes } from "react-router";
+import RegisterPage from "./pages/RegisterPage";
+import CreateCompanyPage from "./pages/CreateCompanyPage";
+import { Button } from "@mui/material";
 
 function App() {
   return (
     <div className="App">
-
-
       <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/AllCompany" element={<AllCompany />} />
-        <Route path="/search-company" element={<SearchCompany />} /> */}
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/create-company" element={<CreateCompanyPage />} />
       </Routes>
-      
-      <h1>Hello</h1>
+
+      {/* <Button variant="contained">MUI BUTTON</Button> */}
     </div>
   );
 }
