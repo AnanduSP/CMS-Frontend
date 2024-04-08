@@ -1,0 +1,29 @@
+.navbar-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgb(202, 202, 202);
+  padding: 0.5rem 0.5rem;
+}
+
+.navbar-left {
+  font-size: xx-large;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-bottom {
+  border-bottom: 2px solid rgb(202, 202, 202);
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

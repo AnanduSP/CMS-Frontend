@@ -1,23 +1,29 @@
-import React, { useState } from 'react'
-import { Container, Typography, Button, TextField, Box , Card, CardContent} from '@mui/material';
-import './LoginPage.css'
+import React, { useState } from "react";
+import { Container, Button, TextField } from "@mui/material";
+import "./LoginPage.css";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState({ username: '', password: '' });
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState({ username: "", password: "" });
 
   const validateForm = () => {
     let isValid = true;
-    setError({ username: '', password: '' });
+    setError({ username: "", password: "" });
 
     if (!username.trim()) {
-      setError((prevState) => ({ ...prevState, username: 'Username is required' }));
+      setError((prevState) => ({
+        ...prevState,
+        username: "Username is required",
+      }));
       isValid = false;
     }
     if (!password.trim()) {
-      setError((prevState) => ({ ...prevState, password: 'Password is required' }));
+      setError((prevState) => ({
+        ...prevState,
+        password: "Password is required",
+      }));
       isValid = false;
     }
 
@@ -31,59 +37,61 @@ const LoginPage = () => {
     if (isValid) {
       console.log(username); // handle submission logic here
       console.log(password);
-      setUsername('');
-      setPassword('');
+      setUsername("");
+      setPassword("");
     }
   };
 
   return (
-      <div className ="login">
-      <Container maxWidth="sm" sx={{display: 'flex', justifyContent: 'center', alignItems:'space-around', height:'auto'}}>
+    <div className="login">
+      <Container
+        maxWidth="sm"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "space-around",
+          height: "auto",
+        }}
+      >
+        <div className="login-form">
+          <h2 variant="h4">Login</h2>
 
-        <Card elevation={5}>
-          <CardContent>
-        
-        <Typography variant='h4'>
-          Login
-        </Typography>
+          <form noValidate onSubmit={handleSubmit}>
+            <TextField
+              label="Username"
+              variant="outlined"
+              fullWidth
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              error={!!error.username}
+              helperText={error.username}
+              sx={{ mb: 3 }}
+            />
 
-        <form noValidate onSubmit={handleSubmit}>
-          <TextField
-            label="Username"
-            variant='outlined'
-            fullWidth
-            margin="normal"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            error={!!error.username}
-            helperText={error.username}
-          />
+            <TextField
+              label="Password"
+              type="password"
+              variant="outlined"
+              fullWidth
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              error={!!error.password}
+              helperText={error.password}
+              sx={{ mb: 3 }}
+            />
 
-          <TextField
-            label="Password"
-            type="password"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            error={!!error.password}
-            helperText={error.password}
-          />
-
-          <Box mt = {2}>
-          <Button type="submit" variant="contained" color="primary" fullWidth>
-            Login
-          </Button>
-          </Box>
-
-        </form>
-        </CardContent>
-        </Card>
+            <Button type="submit" variant="contained" color="primary" fullWidth>
+              Login
+            </Button>
+          </form>
+          <div className="registration-footer">
+            Dont have a account? &nbsp;
+            <Link to="/genral/register">Register Here</Link>
+          </div>
+        </div>
       </Container>
-      </div>
-    
-  )
-}
+    </div>
+  );
+};
 
-export default LoginPage
+export default LoginPage;

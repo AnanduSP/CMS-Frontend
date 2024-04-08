@@ -1,9 +1,63 @@
-import React from 'react'
+import { TextField, Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import "./RegisterPage.css";
 
 const RegisterPage = () => {
-  return (
-    <div>RegisterPage</div>
-  )
-}
+  const [companyName, setCompanyName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-export default RegisterPage
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+  return (
+    <div className="register-parent">
+      <h2>Registeration Form</h2>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          type="text"
+          variant="outlined"
+          color="secondary"
+          label="Company Name"
+          onChange={(e) => setCompanyName(e.target.value)}
+          value={companyName}
+          fullWidth
+          required
+          sx={{ mb: 4 }}
+        />
+        <TextField
+          type="email"
+          variant="outlined"
+          color="secondary"
+          label="Email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+          fullWidth
+          required
+          sx={{ mb: 4 }}
+        />
+        <TextField
+          type="password"
+          variant="outlined"
+          color="secondary"
+          label="Password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          required
+          fullWidth
+          sx={{ mb: 4 }}
+        />
+
+        <Button variant="contained" type="submit" fullWidth>
+          Register
+        </Button>
+      </form>
+      <div className="registration-footer">
+        Already have an account?&nbsp;<Link to="/genral/login">Login Here</Link>
+      </div>
+    </div>
+  );
+};
+
+export default RegisterPage;
