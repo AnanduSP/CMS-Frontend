@@ -34,6 +34,7 @@ const NavBar = () => {
             variant="contained"
             onClick={() => {
               setSelectedPathArr(GenralPathArr);
+              navigate('/genral/login');
             }}
           >
             Genral
@@ -42,6 +43,7 @@ const NavBar = () => {
             variant="contained"
             onClick={() => {
               setSelectedPathArr(CompanyPathArr);
+              navigate('/company/all-company');
             }}
           >
             Company
@@ -50,6 +52,7 @@ const NavBar = () => {
             variant="contained"
             onClick={() => {
               setSelectedPathArr(CouponPathArr);
+              navigate('/coupon/by-company');
             }}
           >
             Coupon

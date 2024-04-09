@@ -18,7 +18,6 @@ const RegisterPage = () => {
       alert(response.data);
       navigate("/general/login");
     });
-    
   }
   return (
     <div className="register-parent">
