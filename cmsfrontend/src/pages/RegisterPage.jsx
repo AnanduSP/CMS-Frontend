@@ -1,5 +1,6 @@
 import { TextField, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import axios from "axios"
 import React, { useState } from "react";
 import "./RegisterPage.css";
 
@@ -7,9 +8,15 @@ const RegisterPage = () => {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [userCredential, setUserCredential]=useState("");
   function handleSubmit(event) {
     event.preventDefault();
+    setUserCredential({name:companyName,email:email,password:password});
+    const regClient=axios.create({baseURL:"http://localhost:8080/auth/register"});
+    regClient.post("",userCredential).then((response)=>{
+      alert(response.data);
+    });
+    
   }
   return (
     <div className="register-parent">
