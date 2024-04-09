@@ -14,10 +14,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        {/* <Route path="/genral/login" element={<LoginPage />} /> */}
-        <Route path="/genral/login" element={<LoginAltPage />} />
-        {/* <Route path="/genral/register" element={<RegisterPage />} /> */}
-        <Route path="/genral/home" element={<HomePage />} />
+        {/* <Route path="/general/login" element={<LoginPage />} /> */}
+        <Route path="/general/login" element={<LoginAltPage />} />
+        {/* <Route path="/general/register" element={<RegisterPage />} /> */}
+        <Route path="/general/home" element={<HomePage />} />
 
         <Route path="/company/all-company" element={<AllCompanyPage />} />
         <Route path="/company/update" element={<UpdateCompanyPage />} />

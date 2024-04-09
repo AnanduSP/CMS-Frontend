@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import { CardHeader } from "@mui/material";
+import Button from "@mui/material/Button";
 import "./HomePage.css";
+import { useNavigate } from "react-router";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   const [contentArr, setContentArr] = useState([
     {
       header: "Innovative Coupon Creation Tools: ",
@@ -31,6 +32,35 @@ const HomePage = () => {
   return (
     <div className="home-parent special-bg">
       <div className="content-wrapper">
+        <div className="content-card">
+          <h3>Get Started Today</h3>
+          <p>
+            Ready to revolutionize your coupon marketing strategy? Dive into
+            CMS's world-class platform with our risk-free trial or schedule a
+            personalized demo with our expert consultants. Explore our extensive
+            resources, customize your experience, and benefit from dedicated
+            onboarding, training, and ongoing support. Join our vibrant
+            community of marketers and start saving, attracting new customers,
+            and growing your business today! Whether you're a small business
+            owner looking to boost sales or a marketing professional seeking
+            innovative solutions, CMS is here to empower you with the tools and
+            insights you need to succeed. With our user-friendly interface,
+            powerful analytics, and unmatched customer service, you'll be on
+            your way to coupon marketing excellence in no time. Don't miss out
+            on this opportunity to elevate your business and leave your
+            competitors in the dust. Sign up now and experience the difference
+            with CMS!
+          </p>
+          <Button
+            sx={{ alignSelf: "flex-end", marginTop: "1rem" }}
+            variant="outlined"
+            onClick={() => {
+              navigate("/general/login");
+            }}
+          >
+            Click here to Login/SignUp
+          </Button>
+        </div>
         {contentArr.map((content) => {
           return (
             <div className="content-card">

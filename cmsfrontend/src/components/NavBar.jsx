@@ -5,9 +5,9 @@ import { useNavigate } from "react-router";
 
 const NavBar = () => {
   const GenralPathArr = [
-    { pageName: "Home", path: "/genral/home" },
-    { pageName: "Login", path: "/genral/login" },
-    // { pageName: "Register", path: "/genral/register" },
+    { pageName: "Home", path: "/general/home" },
+    { pageName: "Login", path: "/general/login" },
+    // { pageName: "Register", path: "/general/register" },
   ];
 
   const CompanyPathArr = [
