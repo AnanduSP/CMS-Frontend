@@ -8,6 +8,10 @@ const LoginAltPage = () => {
 
   const [isActive, setActive] = useState(false);
 
+  const handleSignUp = () => {
+    console.log("hand sign up");
+  };
+
   return (
     <div className="loginalt-parent">
       <div
@@ -17,21 +21,22 @@ const LoginAltPage = () => {
         <div className="form-container sign-up">
           <form>
             <h1>Create Account</h1>
-
             <span>or use your email for registeration</span>
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
             <input type="number" placeholder="Amount" />
-            <button>Sign Up</button>
+            <button onClick={handleSignUp}>Sign Up</button>
           </form>
         </div>
         <div className="form-container sign-in">
           <form>
             <h1>Sign In</h1>
-            <span>or use your email password</span>
+            <span>using your email & password</span>
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <a href="#">Forget Your Password?</a>
+            <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fin.pinterest.com%2Fpin%2Fmemes--325525879330590920%2F&psig=AOvVaw0hctVmj1g_dwvknuXH_UF0&ust=1712779094346000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNiip731tYUDFQAAAAAdAAAAABAJ">
+              Forget Your Password?
+            </a>
             <button>Sign In</button>
           </form>
         </div>
