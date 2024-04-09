@@ -61,7 +61,7 @@ const SearchCompanyPage = () => {
       type="text"
       variant="outlined"
       color="secondary"
-      label="Company Name"
+      label="Company Id"
       onChange={(e) => setCompanyId(e.target.value)}
       value={companyId}
       fullWidth
