@@ -8,13 +8,15 @@ import UpdateCompanyPage from "./pages/UpdateCompanyPage";
 import CouponByCompanyPage from "./pages/CouponByCompanyPage";
 import CouponByIdPage from "./pages/CouponByIdPage";
 import SearchCompanyPage from "./pages/SearchCompanyPage";
+import LoginAltPage from "./pages/LoginAltPage";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/genral/login" element={<LoginPage />} />
-        <Route path="/genral/register" element={<RegisterPage />} />
+        {/* <Route path="/genral/login" element={<LoginPage />} /> */}
+        <Route path="/genral/login" element={<LoginAltPage />} />
+        {/* <Route path="/genral/register" element={<RegisterPage />} /> */}
         <Route path="/genral/home" element={<HomePage />} />
 
         <Route path="/company/all-company" element={<AllCompanyPage />} />

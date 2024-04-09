@@ -5,9 +5,9 @@ import { useNavigate } from "react-router";
 
 const NavBar = () => {
   const GenralPathArr = [
-    { pageName: "Login", path: "/genral/login" },
-    { pageName: "Register", path: "/genral/register" },
     { pageName: "Home", path: "/genral/home" },
+    { pageName: "Login", path: "/genral/login" },
+    // { pageName: "Register", path: "/genral/register" },
   ];
 
   const CompanyPathArr = [
@@ -21,7 +21,7 @@ const NavBar = () => {
     { pageName: "Search by coupon-id", path: "/coupon/by-coupon-id" },
   ];
 
-  const [selectedPathArr, setSelectedPathArr] = useState(GenralPathArr);      //selects which nav bar to be displayed
+  const [selectedPathArr, setSelectedPathArr] = useState(GenralPathArr); //selects which nav bar to be displayed
 
   const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ const NavBar = () => {
             variant="contained"
             onClick={() => {
               setSelectedPathArr(GenralPathArr);
-              navigate('/genral/login');
+              navigate("/genral/login");
             }}
           >
             Genral
@@ -43,7 +43,7 @@ const NavBar = () => {
             variant="contained"
             onClick={() => {
               setSelectedPathArr(CompanyPathArr);
-              navigate('/company/all-company');
+              navigate("/company/all-company");
             }}
           >
             Company
@@ -52,7 +52,7 @@ const NavBar = () => {
             variant="contained"
             onClick={() => {
               setSelectedPathArr(CouponPathArr);
-              navigate('/coupon/by-company');
+              navigate("/coupon/by-company");
             }}
           >
             Coupon

@@ -1,0 +1,6 @@
+.footer-parent {
+  border-top: 2px solid rgb(202, 202, 202);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
