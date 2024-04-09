@@ -45,9 +45,9 @@ const AllCompanyPage = () => {
       id:'1'
     },
     {
-      name:'company1',
-      amount:'2000',
-      id:'1'
+      name:'company2',
+      amount:'5000',
+      id:'2'
     }
   ]);
   return (

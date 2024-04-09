@@ -13,6 +13,7 @@ const NavBar = () => {
   const CompanyPathArr = [
     { pageName: "All-Company", path: "/company/all-company" },
     { pageName: "Update", path: "/company/update" },
+    { pageName: "Search by Company id", path: "/company/search-by-id" },
   ];
 
   const CouponPathArr = [

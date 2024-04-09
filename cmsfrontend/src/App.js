@@ -7,6 +7,7 @@ import AllCompanyPage from "./pages/AllCompanyPage";
 import UpdateCompanyPage from "./pages/UpdateCompanyPage";
 import CouponByCompanyPage from "./pages/CouponByCompanyPage";
 import CouponByIdPage from "./pages/CouponByIdPage";
+import SearchCompanyPage from "./pages/SearchCompanyPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
 
         <Route path="/company/all-company" element={<AllCompanyPage />} />
         <Route path="/company/update" element={<UpdateCompanyPage />} />
+        <Route path="/company/search-by-id" element={<SearchCompanyPage />} />
 
         <Route path="/coupon/by-company" element={<CouponByCompanyPage />} />
         <Route path="/coupon/by-coupon-id" element={<CouponByIdPage />} />
