@@ -20,7 +20,7 @@ const NavBar = () => {
     { pageName: "Search by coupon-id", path: "/coupon/by-coupon-id" },
   ];
 
-  const [selectedPathArr, setSelectedPathArr] = useState(CompanyPathArr);
+  const [selectedPathArr, setSelectedPathArr] = useState(GenralPathArr);      //selects which nav bar to be displayed
 
   const navigate = useNavigate();
 
@@ -59,7 +59,8 @@ const NavBar = () => {
         {selectedPathArr.map((pathObj) => {
           return (
             <Button
-              variant="contained"
+              size="small"
+              // variant="contained"
               onClick={() => {
                 navigate(pathObj.path);
               }}
