@@ -1,7 +1,8 @@
 import { TextField, Button } from "@mui/material";
-import { Link ,useNavigate} from "react-router-dom";
-import axios from "axios"
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router";
+import  React, { useState } from "react";
 import "./RegisterPage.css";
 
 const RegisterPage = () => {
@@ -16,7 +17,7 @@ const RegisterPage = () => {
     const regClient=axios.create({baseURL:"http://localhost:8080/auth/register"});
     regClient.post("",userCredential).then((response)=>{
       alert(response.data);
-      navigate("/general/login");
+      navigate("/genral/login");
     });
   }
   return (
