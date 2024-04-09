@@ -96,6 +96,7 @@
 
 // export default LoginPage;
 import * as React from 'react';
+import { useState } from 'react';
 import { Card } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -137,6 +138,8 @@ export default function SignInSide() {
     });
   };
 
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
   return (
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -173,24 +176,32 @@ export default function SignInSide() {
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
+              type="text"
+              variant='outlined'
+              color='secondary'
+              label="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
                 margin="normal"
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
                 name="email"
                 autoComplete="email"
                 autoFocus
               />
               <TextField
                 margin="normal"
+                variant='outlined'
                 required
                 fullWidth
+                value={password}
+                onChange={(e)=>{setPassword(e.target.value);}}
                 name="password"
                 label="Password"
                 type="password"
                 id="password"
-                autoComplete="current-password"
+                autoComplete="password"
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
