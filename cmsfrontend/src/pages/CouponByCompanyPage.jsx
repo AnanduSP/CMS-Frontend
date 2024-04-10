@@ -14,7 +14,7 @@ const CouponByCompanyPage = () => {
     {
       redeemCode: "abcde-abcde-abcde-abcde",
       companyId: "1",
-      expiryDate: "2017",
+      expiryDate: "2018",
       denomination: "2000",
       id: "112",
     },
@@ -44,7 +44,8 @@ const CouponByCompanyPage = () => {
   const [companyId, setCompanyId] = useState(0);
 
   const handleSubmit = () => {
-    console.log("search coupons from company page");
+    console.log("we are showing company ID:");
+    console.log(companyId);
     // axios.get(""+companyId).then((response)=>{console.log(response)}).catch((error)=>{console.log(error)});
   };
 
@@ -79,6 +80,7 @@ const CouponByCompanyPage = () => {
           return (
             <div className="coupon-holder">
               <CouponCard
+                id={coupon.id}
                 denomination={coupon.denomination}
                 expiryDate={coupon.expiryDate}
                 redeemCode={coupon.redeemCode}

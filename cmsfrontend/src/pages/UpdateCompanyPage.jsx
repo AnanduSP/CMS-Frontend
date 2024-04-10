@@ -3,23 +3,40 @@ import { TextField, Button } from "@mui/material";
 import "./UpdateCompanyPage.css";
 import CouponCard from "../components/CouponCard";
 const UpdateCompanyPage = () => {
-  const [companyId, setCompanyId] = useState(0);
+  const [companyId, setCompanyId] = useState();
   const [isValid, setIsValid] = useState(false);
-  const [updateCompanyObj, setUpdateCompanyObj] = useState({});
+
+  const isDisabled = true;
+  // const [updatedCompanyName, setUpdatedCompanyName] = useState();
+  // const [updatedCompanyId, setUpdatedCompanyId] = useState();
+  // const [updatedCompanyAmount, setUpdatedCompanyAmount] = useState();
+
+  const [updateCompanyObj, setUpdateCompanyObj] = useState({
+  
+    updatedCompanyId:"",
+    updatedCompanyName:"",
+    updatedCompanyAmount:''
+
+  });
+
+
   const handleSubmit = () => {
-    console.log("search coupons from update search page");
+    console.log("should return companyId to update from search bar");
+    console.log(companyId);
     setIsValid(!isValid);
     // axios.get(""+companyId).then((response)=>{console.log(response)}).catch((error)=>{console.log(error)});
   };
 
   const handleUpdateSubmit = () => {
-    console.log("search coupons from update page");
+    console.log("Printing values to updated : ");
+    console.log(updateCompanyObj);
+    //connect 
     // axios.get(""+companyId).then((response)=>{console.log(response)}).catch((error)=>{console.log(error)});
   };
   return (
     <div className="update-parent">
       <div className="search-company-form">
-        <h2>Search Coupon</h2>
+        <h2>Search Company</h2>
         <TextField
           type="text"
           variant="outlined"
@@ -49,8 +66,10 @@ const UpdateCompanyPage = () => {
             variant="outlined"
             color="secondary"
             label="Enter your Company Id"
-            onChange={(e) => setUpdateCompanyObj(e.target.value)}
-            value={"This is fixed for now, please change it accordingly"}
+      
+            // onChange={(e) => setUpdateCompanyObj((curr) => { return { ...curr, updatedCompanyId: e.target.value }; })}
+            value={companyId} 
+            disabled={isDisabled}
             fullWidth
             required
             sx={{ mt: 4 }}
@@ -60,8 +79,10 @@ const UpdateCompanyPage = () => {
             variant="outlined"
             color="secondary"
             label="Enter your Company Name"
-            onChange={(e) => setUpdateCompanyObj(e.target.value)}
-            value={"This is fixed for now, please change it accordingly"}
+            // onChange={(e) => setUpdateCompanyObj((curr)=>{return {...curr,updatedCompanyName:e.target.value}})}
+            // value={"new name"}
+            onChange={(e) => setUpdateCompanyObj((curr) => { return { ...curr, updatedCompanyName: e.target.value }; })}
+            value={updateCompanyObj.updatedCompanyName}
             fullWidth
             required
             sx={{ mt: 4 }}
@@ -71,8 +92,10 @@ const UpdateCompanyPage = () => {
             variant="outlined"
             color="secondary"
             label="Enter your Company Amount"
-            onChange={(e) => setUpdateCompanyObj(e.target.value)}
-            value={"This is fixed for now, please change it accordingly"}
+            // onChange={(e) => setUpdateCompanyObj((curr)=>{return {...curr,updatedCompanyAmount:e.target.value}})}
+            // value={"new amount"}
+            onChange={(e) => setUpdateCompanyObj((curr) => { return { ...curr, updatedCompanyAmount: e.target.value }; })}
+            value={updateCompanyObj.updatedCompanyAmount}
             fullWidth
             required
             sx={{ mt: 4 }}

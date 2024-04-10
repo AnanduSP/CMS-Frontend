@@ -4,7 +4,7 @@ import "./CouponByIdPage.css";
 import CouponCard from "../components/CouponCard";
 
 const CouponByIdPage = () => {
-  const [couponId, setCouponId] = useState(0);
+  const [couponId, setCouponId] = useState();
 
   const [coupon, setCoupon] = useState({
     redeemCode: "abcde-abcde-abcde-abcde",
@@ -15,7 +15,8 @@ const CouponByIdPage = () => {
   });
 
   const handleSubmit = () => {
-    console.log("search coupons from company page");
+    console.log("simulating sending coupon id : ");
+    console.log(couponId);
     // axios.get(""+companyId).then((response)=>{console.log(response)}).catch((error)=>{console.log(error)});
   };
 
