@@ -1,23 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from "react";
 import { TextField, Button } from "@mui/material";
 import "./AddCouponPage.css";
+import axios from "axios";
+import { UserContext } from "../App";
 import CouponCard from "../components/CouponCard";
 
 const AddCouponPage = () => {
 
     const [amount, setAmount] = useState();
 
-  const [coupon, setCoupon] = useState({
-    redeemCode: "abcde-abcde-abcde-abcde",
-    companyId: "1",
-    expiryDate: "2017",
-    denomination: "2000",
-    id: "112",
-  });
+  const [coupons, setCoupons] = useState([]);
+  const [companyName,setCompanyName]=useState("");
+  const [token,setToken]=useContext(UserContext);
+  
 
   const handleSubmit = () => {
     console.log("simulating sending coupon id : ");
     console.log(amount);
+    axios.get(`http://localhost:8080/auth/validate?token=${token}`).then((response)=>{
+      setCompanyName(response.data)
+      console.log(response.data);
+    });
+    axios.post("http://localhost:8081/CouponManagementSystem/api/coupons/generate",{"name":companyName,"amount":amount}).then((response)=>{
+      setCoupons(response.data.couponsDTOS);
+    });
     // axios.get(""+companyId).then((response)=>{console.log(response)}).catch((error)=>{console.log(error)});
   };
 
@@ -47,14 +53,19 @@ const AddCouponPage = () => {
         </Button>
       </div>
 
-      <div className="coupon-container">
-        <div className="coupon-holder">
-          <CouponCard
-            denomination={coupon.denomination}
-            expiryDate={coupon.expiryDate}
-            redeemCode={coupon.redeemCode}
-          />
-        </div>
+      <div className="coupon-container" >
+        {coupons.map((coupon) => {
+          return (
+            <div className="coupon-holder">
+              <CouponCard
+                id={coupon.id}
+                denomination={coupon.denomination}
+                expiryDate={coupon.expDate}
+                redeemCode={coupon.code}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
 

@@ -13,34 +13,34 @@ import CouponCard from "../components/CouponCard";
 
 const CouponByCompanyPage = () => {
   const [couponArr, setCouponArr] = useState([
-    {
-      redeemCode: "abcde-abcde-abcde-abcde",
-      companyId: "1",
-      expiryDate: "2018",
-      denomination: "2000",
-      id: "112",
-    },
-    {
-      redeemCode: "abcde-abcde-abcde-abcde",
-      companyId: "1",
-      expiryDate: "2017",
-      denomination: "2000",
-      id: "w21",
-    },
-    {
-      redeemCode: "abcde-abcde-abcde-abcde",
-      companyId: "1",
-      expiryDate: "2017",
-      denomination: "2000",
-      id: "w21",
-    },
-    {
-      code: "abcde-abcde-abcde-abcde",
-      companyId: "1",
-      expDate: "2017",
-      denomination: "2000",
-      id: "w21",
-    },
+    // {
+    //   redeemCode: "abcde-abcde-abcde-abcde",
+    //   companyId: "1",
+    //   expiryDate: "2018",
+    //   denomination: "2000",
+    //   id: "112",
+    // },
+    // {
+    //   redeemCode: "abcde-abcde-abcde-abcde",
+    //   companyId: "1",
+    //   expiryDate: "2017",
+    //   denomination: "2000",
+    //   id: "w21",
+    // },
+    // {
+    //   redeemCode: "abcde-abcde-abcde-abcde",
+    //   companyId: "1",
+    //   expiryDate: "2017",
+    //   denomination: "2000",
+    //   id: "w21",
+    // },
+    // {
+    //   code: "abcde-abcde-abcde-abcde",
+    //   companyId: "1",
+    //   expDate: "2017",
+    //   denomination: "2000",
+    //   id: "w21",
+    // },
   ]);
   const [companyName,setCompanyName]=useState("");
   const [token,setToken]=useContext(UserContext);
@@ -73,7 +73,7 @@ const CouponByCompanyPage = () => {
     <div className="search-coupon-by-company-parent">
       <div className="search-company-form">
         <h2>Search Company</h2>
-        <TextField
+        {/* <TextField
           type="text"
           variant="outlined"
           color="secondary"
@@ -83,7 +83,7 @@ const CouponByCompanyPage = () => {
           fullWidth
           required
           sx={{ mt: 4, mb: 4 }}
-        />
+        /> */}
 
         <Button
           variant="outlined"
