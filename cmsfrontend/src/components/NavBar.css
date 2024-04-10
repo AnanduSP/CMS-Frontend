@@ -1,4 +1,4 @@
-.navbar-parent {
+/* .navbar-parent {
   display: flex;
   flex-direction: column;
 }
@@ -21,9 +21,9 @@
 }
 
 .navbar-bottom {
-  border-bottom: 2px solid rgb(202, 202, 202);
+  border-bottom: c;
   padding: 0.2rem 0.2rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-}
+} */
