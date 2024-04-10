@@ -3,12 +3,8 @@ import "./AltNavbar.css";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
 
-const AltNavbar = () => {
-
-
-  
-
-
+const AltNavbar = ({isUser,setIsUser}) => {
+  console.log(isUser)
   const UnSignedPathArr = [
     { pageName: "Home", path: "/general/home" },
     { pageName: "Login", path: "/general/login" },
@@ -34,8 +30,7 @@ const AltNavbar = () => {
 
 
   useEffect(()=>{
-    let user = localStorage.getItem("isUser");
-    if(user!=null)
+    if(isUser==true)
     {
       setActivePathArr(GenralPathArr);
     }
@@ -61,15 +56,14 @@ const AltNavbar = () => {
               </Button>
             );
           })}
-{console.log(UnSignedPathArr.length)}
           {
-            activePathArr.length>2 && 
+            isUser && 
             <Button
             size="small"
             // variant="outlined"
             color="error"
             onClick={() => {
-              localStorage.removeItem("isUser");
+              setIsUser(false);
             }}
           >
             LogOut

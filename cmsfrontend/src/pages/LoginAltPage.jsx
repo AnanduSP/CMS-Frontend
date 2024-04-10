@@ -4,7 +4,7 @@ import "./LoginAltPage.css";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
-const LoginAltPage = () => {
+const LoginAltPage = ({setIsUser}) => {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,13 +16,13 @@ const LoginAltPage = () => {
 
   const handleSignIn = (event) => {
     event.preventDefault();
-    localStorage.setItem("isUser","true");
-
+    setIsUser(true);
     logClient.post("",{"username":companyName,"password":password}).then(
       (response)=>{
         setToken(response.data);
         sessionStorage.setItem("username",companyName);
         console.log(token);
+        
       }
     ).catch((error)=>{
       console.log("some error occured",error);
