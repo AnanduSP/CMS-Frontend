@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <Routes>
         {/* <Route path="/general/login" element={<LoginPage />} /> */}
-        <Route path="/" element={<LoginAltPage/>}/>
+        <Route path="/" element={<HomePage/>}/>
         <Route path="/general/login" element={<LoginAltPage />} />
         {/* <Route path="/general/register" element={<RegisterPage />} /> */}
         <Route path="/general/home" element={<HomePage />} />
