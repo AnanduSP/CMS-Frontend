@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { UserContext } from "../App";
 import { TableBody, TableContainer, TextField, Button } from "@mui/material";
 import "./CouponByCompanyPage.css";
+import axios from "axios";
 import CouponCard from "../components/CouponCard";
 
 const CouponByCompanyPage = () => {
@@ -33,18 +35,35 @@ const CouponByCompanyPage = () => {
       id: "w21",
     },
     {
-      redeemCode: "abcde-abcde-abcde-abcde",
+      code: "abcde-abcde-abcde-abcde",
       companyId: "1",
-      expiryDate: "2017",
+      expDate: "2017",
       denomination: "2000",
       id: "w21",
     },
   ]);
+  const [companyName,setCompanyName]=useState("");
+  const [token,setToken]=useContext(UserContext);
+  
+  const updateCoupons=()=>{
+    console.log(token);
+    axios.get(`http://localhost:8080/auth/validate?token=${token}`).then((response)=>{
+      setCompanyName(response.data)
+      console.log(response.data);
+    });
+    axios.get(`http://localhost:8081/CouponManagementSystem/api/coupons/view_coupon/${companyName}`).then((response)=>{
+      setCouponArr(response.data.couponsDTOS);
+      console.log(couponArr);
+    });
+  };
+
+  
 
   const [companyId, setCompanyId] = useState(0);
 
   const handleSubmit = () => {
     console.log("search coupons from company page");
+    updateCoupons();
     // axios.get(""+companyId).then((response)=>{console.log(response)}).catch((error)=>{console.log(error)});
   };
 
@@ -74,14 +93,14 @@ const CouponByCompanyPage = () => {
         </Button>
       </div>
 
-      <div className="coupon-container">
+      <div className="coupon-container" >
         {couponArr.map((coupon) => {
           return (
             <div className="coupon-holder">
               <CouponCard
                 denomination={coupon.denomination}
-                expiryDate={coupon.expiryDate}
-                redeemCode={coupon.redeemCode}
+                expiryDate={coupon.expDate}
+                redeemCode={coupon.code}
               />
             </div>
           );
