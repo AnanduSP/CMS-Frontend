@@ -26,7 +26,7 @@ const AltNavbar = ({isUser,setIsUser}) => {
     { pageName: "Add Coupon", path: "/coupon/add-coupon"},
   ];
 
-  const [activePathArr,setActivePathArr ]=useState(UnSignedPathArr);
+  const [activePathArr,setActivePathArr ]=useState(GenralPathArr);
 
 
   useEffect(()=>{
@@ -57,7 +57,7 @@ const AltNavbar = ({isUser,setIsUser}) => {
             );
           })}
           {
-            isUser && 
+            false && 
             <Button
             size="small"
             // variant="outlined"
