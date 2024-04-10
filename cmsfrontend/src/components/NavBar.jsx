@@ -17,8 +17,8 @@ const NavBar = () => {
   ];
 
   const CouponPathArr = [
+    { pageName: "Add Coupon", path: "/coupon/add-coupon"},
     { pageName: "Search by company", path: "/coupon/by-company" },
-    { pageName: "Search by coupon-id", path: "/coupon/by-coupon-id" },
   ];
 
   const [selectedPathArr, setSelectedPathArr] = useState(GenralPathArr); //selects which nav bar to be displayed

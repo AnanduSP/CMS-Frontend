@@ -17,6 +17,7 @@ const AltNavbar = () => {
     //coupons's pages
     { pageName: "Search by company", path: "/coupon/by-company" },
     { pageName: "Search by coupon-id", path: "/coupon/by-coupon-id" },
+    { pageName: "Add Coupon", path: "/coupon/add-coupon"},
   ];
 
   const [selectedPathArr, setSelectedPathArr] = useState(GenralPathArr); //selects which nav bar to be displayed

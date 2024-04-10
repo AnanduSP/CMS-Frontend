@@ -30,6 +30,7 @@ function App() {
 
         <Route path="/coupon/by-company" element={<CouponByCompanyPage />} />
         <Route path="/coupon/by-coupon-id" element={<CouponByIdPage />} />
+        <Route path="/coupon/add-coupon" element={<CouponByIdPage />} />    
       </Routes>
     </div>
     </UserContext.Provider>
