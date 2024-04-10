@@ -10,6 +10,7 @@ import CouponByIdPage from "./pages/CouponByIdPage";
 import SearchCompanyPage from "./pages/SearchCompanyPage";
 import LoginAltPage from "./pages/LoginAltPage";
 import { useState,createContext } from "react";
+import AddCouponPage from "./pages/AddCouponPage";
 export const UserContext=createContext();
 function App() {
   const [token,setToken]=useState("");
@@ -30,7 +31,7 @@ function App() {
 
         <Route path="/coupon/by-company" element={<CouponByCompanyPage />} />
         <Route path="/coupon/by-coupon-id" element={<CouponByIdPage />} />
-        <Route path="/coupon/add-coupon" element={<CouponByIdPage />} />    
+        <Route path="/coupon/add-coupon" element={<AddCouponPage />} />    
       </Routes>
     </div>
     </UserContext.Provider>
