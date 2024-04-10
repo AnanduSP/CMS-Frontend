@@ -16,12 +16,13 @@ const LoginAltPage = () => {
 
   const handleSignIn = (event) => {
     event.preventDefault();
+    localStorage.setItem("isUser","true");
+
     logClient.post("",{"username":companyName,"password":password}).then(
       (response)=>{
         setToken(response.data);
         sessionStorage.setItem("username",companyName);
         console.log(token);
-
       }
     ).catch((error)=>{
       console.log("some error occured",error);

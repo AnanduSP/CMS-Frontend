@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./AltNavbar.css";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
 
 const AltNavbar = () => {
-  const GenralPathArr = [
+
+
+  
+
+
+  const UnSignedPathArr = [
     { pageName: "Home", path: "/general/home" },
     { pageName: "Login", path: "/general/login" },
+  ];
+
+  const GenralPathArr = [
+    { pageName: "Home", path: "/general/home" },
+    // { pageName: "Login", path: "/general/login" },
     // { pageName: "Register", path: "/general/register" },
 
     //company's pages
@@ -20,7 +30,16 @@ const AltNavbar = () => {
     { pageName: "Add Coupon", path: "/coupon/add-coupon"},
   ];
 
-  const [selectedPathArr, setSelectedPathArr] = useState(GenralPathArr); //selects which nav bar to be displayed
+  const [activePathArr,setActivePathArr ]=useState(UnSignedPathArr);
+
+
+  useEffect(()=>{
+    let user = localStorage.getItem("isUser");
+    if(user!=null)
+    {
+      setActivePathArr(GenralPathArr);
+    }
+  },[])
 
   const navigate = useNavigate();
 
@@ -29,7 +48,7 @@ const AltNavbar = () => {
       <div className="navbar-island">
         <div className="navbar-left">CMS</div>
         <div className="navbar-right">
-          {selectedPathArr.map((pathObj) => {
+          {activePathArr.map((pathObj) => {
             return (
               <Button
                 size="small"
@@ -42,6 +61,21 @@ const AltNavbar = () => {
               </Button>
             );
           })}
+{console.log(UnSignedPathArr.length)}
+          {
+            activePathArr.length>2 && 
+            <Button
+            size="small"
+            // variant="outlined"
+            color="error"
+            onClick={() => {
+              localStorage.removeItem("isUser");
+            }}
+          >
+            LogOut
+          </Button>
+          }
+      
         </div>
       </div>
     </div>
