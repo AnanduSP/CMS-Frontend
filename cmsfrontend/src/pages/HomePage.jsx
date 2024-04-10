@@ -22,17 +22,32 @@ const HomePage = () => {
       description:
         "Knowledge is power, especially in the world of marketing. With [Your Company Name], you'll gain access to powerful analytics tools that provide real-time insights into coupon performance, customer behavior, and campaign effectiveness. Armed with this data, you can make informed decisions, optimize your marketing efforts, and drive continuous improvement.",
     },
-    {
-      header: "Seamless Integration with Existing Systems:",
-      description:
-        " We understand that efficiency is key to your success. That's why our platform is designed to seamlessly integrate with your existing POS systems, e-commerce platforms, and CRM software. Whether you're a small business or a large enterprise, our flexible solutions can be tailored to meet your unique needs, saving you time, money, and headaches.",
-    },
+    // {
+    //   header: "Seamless Integration with Existing Systems:",
+    //   description:
+    //     " We understand that efficiency is key to your success. That's why our platform is designed to seamlessly integrate with your existing POS systems, e-commerce platforms, and CRM software. Whether you're a small business or a large enterprise, our flexible solutions can be tailored to meet your unique needs, saving you time, money, and headaches.",
+    // },
   ]);
 
   return (
     <div className="home-parent special-bg">
       <div className="content-wrapper">
-        <div className="content-card">
+
+        <div className="img-parent">
+
+          <img className="banner-img" src='https://images.pexels.com/photos/54581/escalator-stairs-metal-segments-architecture-54581.jpeg?auto=compress&cs=tinysrgb&w=800'/>
+          <div className="img-text">    
+                
+          Welcome to Coupon Management System!!
+          </div>
+        </div>
+        {contentArr.map((content)=>{
+                  return <div className="content-card"> 
+                    <h3>{content.header}</h3>
+                    <p>{content.description}</p>
+                  </div>
+                })}
+        {/* <div className="content-card">
           <h3>Get Started Today</h3>
           <p>
             Ready to revolutionize your coupon marketing strategy? Dive into
@@ -68,7 +83,7 @@ const HomePage = () => {
               <p>{content.description}</p>
             </div>
           );
-        })}
+        })} */}
       </div>
     </div>
   );
