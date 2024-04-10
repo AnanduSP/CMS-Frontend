@@ -12,7 +12,7 @@ const AltNavbar = ({isUser,setIsUser}) => {
 
   const GenralPathArr = [
     { pageName: "Home", path: "/general/home" },
-    // { pageName: "Login", path: "/general/login" },
+    { pageName: "Login", path: "/general/login" },
     // { pageName: "Register", path: "/general/register" },
 
     //company's pages
