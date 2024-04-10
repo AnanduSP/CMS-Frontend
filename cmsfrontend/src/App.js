@@ -1,17 +1,21 @@
 import "./App.css";
-import LoginPage from "./pages/LoginPage";
+// import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import { Route, Routes } from "react-router";
-import RegisterPage from "./pages/RegisterPage";
+// import RegisterPage from "./pages/RegisterPage";
 import AllCompanyPage from "./pages/AllCompanyPage";
 import UpdateCompanyPage from "./pages/UpdateCompanyPage";
 import CouponByCompanyPage from "./pages/CouponByCompanyPage";
 import CouponByIdPage from "./pages/CouponByIdPage";
 import SearchCompanyPage from "./pages/SearchCompanyPage";
 import LoginAltPage from "./pages/LoginAltPage";
-
+import { useState,createContext } from "react";
+export const UserContext=createContext();
 function App() {
+  const [token,setToken]=useState("");
+
   return (
+    <UserContext.Provider value={[token,setToken]}>
     <div className="App">
       <Routes>
         {/* <Route path="/general/login" element={<LoginPage />} /> */}
@@ -27,6 +31,7 @@ function App() {
         <Route path="/coupon/by-coupon-id" element={<CouponByIdPage />} />
       </Routes>
     </div>
+    </UserContext.Provider>
   );
 }
 
