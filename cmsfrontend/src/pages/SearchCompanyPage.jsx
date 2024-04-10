@@ -40,10 +40,11 @@ const SearchCompanyPage = () => {
     id: "1",
   });
 
-  const [companyId, setCompanyId] = useState(0);
+  const [companyId, setCompanyId] = useState();
 
   const handleSubmit = () => {
-    console.log("handle");
+    console.log("simulating searching company by companyId :");
+    console.log(companyId);
     // axios.get(""+companyId).then((response)=>{console.log(response)}).catch((error)=>{console.log(error)});
   };
 

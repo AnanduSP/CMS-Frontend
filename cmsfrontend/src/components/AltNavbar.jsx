@@ -8,9 +8,13 @@ const AltNavbar = () => {
     { pageName: "Home", path: "/general/home" },
     { pageName: "Login", path: "/general/login" },
     // { pageName: "Register", path: "/general/register" },
-    { pageName: "All", path: "/company/all-company" },
-    { pageName: "Update", path: "/company/update" },
-    { pageName: "search company", path: "/company/search-by-id" },
+
+    //company's pages
+    { pageName: "All Company", path: "/company/all-company" },
+    { pageName: "Update Company", path: "/company/update" },
+    { pageName: "Search Company", path: "/company/search-by-id" },
+
+    //coupons's pages
     { pageName: "Search by company", path: "/coupon/by-company" },
     { pageName: "Search by coupon-id", path: "/coupon/by-coupon-id" },
   ];
